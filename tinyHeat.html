@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinyHeart</title>
+    <style>
+        body{
+            padding-top: 10px;
+        }
+        .all_bg{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        #allcanvas{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            color:#00c7c8
+        }
+        #canvas1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        #canvas2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        #FPS{
+            position: absolute;
+            top: 0;
+            left: 100px;
+        }
+        .FPSwrap{
+            position: relative;
+            z-index: 999;
+            top:20px;
+        }
+        #ad{
+            position: absolute;
+            right: 20px;
+            bottom: 30px;
+            color:#aaa;
+            z-index: 9999;
+        }
+        #ad img{
+            height: 30px;
+            width: 30px;
+            margin-bottom: -4px;
+        }
+        #ad i{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="all_bg">
+        <div id="allcanvas">
+            <div class="FPSwrap">&nbsp;&nbsp;&nbsp;FPS:<span id="FPS"></span></div>
+            <div id="ad">
+                <img src="./src/headImg.jpg">
+                <span>微信号:<i>yhda110</i>(Stormer)</span>
+            </div>
+            <canvas id="canvas1" width="800px" height="600px"></canvas>
+            <canvas id="canvas2" width="800px" height="600px"></canvas>
+        </div>
+    </div>
+</body>
+<script src="js/commonJs.js"></script>
+<script src="js/main.js"></script>
+<script src="js/background.js"></script>
+<script src="js/ane.js"></script>
+<script src="js/fruit.js"></script>
+<script src="js/mom.js"></script>
+<script src="js/cllision.js"></script>
+</html>
