@@ -72,7 +72,6 @@ fruitObj.prototype.update = function(){
 	}
 }
 fruitObj.prototype.dead = function(i){
-	console.log(i)
 	this.alive[i] = false;
 }
 fruitObj.prototype.fruitMonitor = function(){
