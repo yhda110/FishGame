@@ -18,6 +18,7 @@ var fruit;
 var mx;
 var my;
 
+var html = document.getElementsByTagName('html')[0];
 //绘制背景图片
 var bgPic = new Image();
 
@@ -90,5 +91,8 @@ function onMouseMove(e){
     if(e.offSetX||e.layerX){
         mx = e.offSetX == undefined ? e.layerX : e.offSetX; 
         my = e.offSetY == undefined ? e.layerY : e.offSetY; 
+        html.style.cursor = 'wait';
+    }else{
+        html.style.cursor = 'default';
     }
 }
