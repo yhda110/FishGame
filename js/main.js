@@ -25,6 +25,10 @@ var bgPic = new Image();
 var mom;
 //定义小鱼
 var baby;
+//动画
+var babyTail = [];
+var momTail = [];
+
 document.body.onload = game;
 function game(){
     init();
@@ -67,6 +71,14 @@ function init(){
     //初始鼠标位置
     mx = canWidth*.5;
     my = canHeight*.5;
+
+    //初始化尾巴
+    for(var i = 0;i < 8;i ++){
+        babyTail[i] = new Image();
+        momTail[i] = new Image();
+        babyTail[i].src = './src/babyTail' + i + '.png';
+        momTail[i].src = './src/bigTail' + i + '.png';
+    }
 }
 function gameloop(){
     window.requestAnimFrame(gameloop);//setInsterval,setTimeout无法解决的，根据机器性能来计算，比较智能,但会导致帧与帧之间的时间间隔不固定FPS
@@ -85,8 +97,8 @@ function gameloop(){
     fruit.fruitMonitor();
 
     ctx1.clearRect(0,0,canWidth,canHeight);
-    mom.draw();
     baby.draw();
+    mom.draw();
 
     momFruitCllision();
 

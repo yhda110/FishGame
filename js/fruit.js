@@ -1,5 +1,5 @@
 var fruitObj = function(){
-	this.num = 30;
+	this.num = 20;
 	this.alive = [];//bool,是否活着
 	this.orange = new Image();
 	this.blue = new Image();
