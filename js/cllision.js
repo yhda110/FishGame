@@ -5,9 +5,7 @@ function momFruitCllision(){
 			var l = calLength2(fruit.x[i], fruit.y[i], mom.x, mom.y);
 			if(l < 900){
 				//fruit eaten
-				if(fruit.l[i]>14){//确定果实成熟
-					fruit.dead(i);
-				}
+				fruit.dead(i);
 			}
 		}
 	}
