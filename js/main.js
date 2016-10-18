@@ -24,6 +24,9 @@ var bgPic = new Image();
 
 //定义大鱼
  var mom;
+//定义小鱼
+ var baby;
+
 document.body.onload = game;
 function game(){
     init();
@@ -60,6 +63,8 @@ function init(){
     //绘制鱼
     mom = new momObj();
     mom.init();
+    baby = new babyObj();
+    baby.init();
 
     //初始鼠标位置
     mx = canWidth*.5;
@@ -71,6 +76,8 @@ function gameloop(){
     var now = Date.now();
     deltaTime = now - lastTime;
     lastTime = now;
+    deltaTime = deltaTime>40?40:deltaTime;
+    if(deltaTime > 40){deltaTime = 40};
     //显示到页面上FPS
     document.getElementById('FPS').innerHTML = deltaTime;
 
@@ -81,6 +88,7 @@ function gameloop(){
     fruit.fruitMonitor();
 
     ctx1.clearRect(0,0,canWidth,canHeight);
+    baby.draw();
     mom.draw();
 
     momFruitCllision();

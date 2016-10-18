@@ -19,14 +19,14 @@ momObj.prototype.init = function(){
 }
 momObj.prototype.draw =function(){
 	//lerp目标值
-	this.x = lerpDistance(mx,this.x,.95);
-	this.y = lerpDistance(my,this.y,.95);
+	this.x = lerpDistance(mx,this.x,.98);
+	this.y = lerpDistance(my,this.y,.98);
 
 	//角度
-	var deltaY = this.y - my;
-	var deltaX = this.x - mx;
+	var deltaY =  my - this.y;
+	var deltaX =  mx - this.x;
 
-	var beta = Math.atan2(deltaY,deltaX);
+	var beta = Math.atan2(deltaY,deltaX) + Math.PI;
 
 	this.angle = lerpAngle(beta, this.angle, .9)
 
@@ -34,8 +34,8 @@ momObj.prototype.draw =function(){
 	ctx1.save();
 	ctx1.translate(this.x,this.y);
 	ctx1.rotate(this.angle);
+	ctx1.drawImage(this.bigTail,-this.bigTail.width*.5+30,-this.bigTail.height*.5);
 	ctx1.drawImage(this.bigBody,-this.bigBody.width*.5,-this.bigBody.height*.5);
 	ctx1.drawImage(this.bigEye,-this.bigEye.width*.5,-this.bigEye.height*.5);
-	ctx1.drawImage(this.bigTail,-this.bigTail.width*.5+30,-this.bigTail.height*.5);
 	ctx1.restore();
 }
